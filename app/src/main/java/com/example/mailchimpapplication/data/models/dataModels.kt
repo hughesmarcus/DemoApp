@@ -5,18 +5,19 @@ data class MailChimpList(val id: String, val name: String)
 
 data class MembersResponse(val members: List<Member>)
 data class MemberResponse(val member: Member)
+
 data class Member(
     val id: String,
-    val email_address: String,
+    var email_address: String,
     val status: String,
     val last_changed: String,
     val list_id: String,
-    val merge_fields: MergeFields
+    var merge_fields: MergeFields
 )
 
 data class MergeFields(
-    val FNAME: String,
-    val LNAME: String,
+    var FNAME: String,
+    var LNAME: String,
     val ADDRESS: Address? = null,
     val PHONE: String? = null,
     val COMPANY: String? = null,

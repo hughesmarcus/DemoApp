@@ -30,8 +30,18 @@ class SubListFragment : DaggerFragment() {
         val view = inflater.inflate(R.layout.fragment_sublist, container, false)
         ButterKnife.bind(this, view)
         setupSubsList()
-        viewModel.subsLiveData.observe(viewLifecycleOwner, Observer { displayList(it) })
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.setSubs()
+        viewModel.subList.observe(viewLifecycleOwner, Observer { displayList(it) })
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.subList.removeObservers(viewLifecycleOwner)
     }
 
     private fun displayList(list: List<SubListAdapterType>) {
@@ -42,6 +52,7 @@ class SubListFragment : DaggerFragment() {
     interface NavigationHandler {
         fun onMemberClick(member: Member)
     }
+
     private fun setupSubsList() {
         subAdapter = activity?.let {
             SubAdapter(
