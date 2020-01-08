@@ -64,16 +64,8 @@ class MemberFragment : DaggerFragment() {
         if (memberID != null && listID != null) {
             memberViewModel.getMember(memberID, listID)
         }
-    }
 
-    override fun onResume() {
-        super.onResume()
         memberViewModel.member.observe(viewLifecycleOwner, Observer { setupView(it) })
-    }
-
-    override fun onPause() {
-        super.onPause()
-        memberViewModel.member.removeObservers(viewLifecycleOwner)
     }
 
     private fun setupView(member: Member?) {
