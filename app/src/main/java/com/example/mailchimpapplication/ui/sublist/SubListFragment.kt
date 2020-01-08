@@ -1,10 +1,9 @@
-package com.example.mailchimpapplication.ui
+package com.example.mailchimpapplication.ui.sublist
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -44,9 +43,14 @@ class SubListFragment : DaggerFragment() {
         fun onMemberClick(member: Member)
     }
     private fun setupSubsList() {
-        subAdapter = activity?.let { SubAdapter(listOf()) }
+        subAdapter = activity?.let {
+            SubAdapter(
+                listOf()
+            )
+        }
         subAdapter?.let { adapter ->
-            adapter.subListClickhandler = object : SubAdapter.SubListClickHandler {
+            adapter.subListClickhandler = object :
+                SubAdapter.SubListClickHandler {
                 override fun onClickMember(member: Member) {
                     (activity as NavigationHandler).onMemberClick(
                         member

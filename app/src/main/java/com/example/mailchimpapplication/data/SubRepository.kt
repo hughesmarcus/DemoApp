@@ -1,12 +1,15 @@
 package com.example.mailchimpapplication.data
 
-import com.example.mailchimpapplication.ui.SubListAdapterType
+import com.example.mailchimpapplication.ui.sublist.SubListAdapterType
 import com.example.mailchimpapplication.ui.SubListItemUIModel
 import com.example.mailchimpapplication.utils.safeCall
 
 class SubRepository(private val subService: SubService) {
     suspend fun getLists() = safeCall { subService.getLists() }?.lists
     suspend fun getMembers(listId: String) = safeCall { subService.getListMembers(listId) }?.members
+
+    suspend fun updateMember(listId: String, memberId: String) =
+        safeCall { subService.updateMember(listId, memberId) }
 
     // This is usually in a interactor, Also using a datebase for caching
     suspend fun getUiList(): List<SubListAdapterType> {

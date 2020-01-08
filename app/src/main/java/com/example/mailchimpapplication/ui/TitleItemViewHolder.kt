@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.mailchimpapplication.R
+import com.example.mailchimpapplication.ui.sublist.SubAdapter
 
 class TitleItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 

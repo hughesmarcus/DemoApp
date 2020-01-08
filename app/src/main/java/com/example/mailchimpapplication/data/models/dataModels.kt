@@ -1,9 +1,10 @@
 package com.example.mailchimpapplication.data.models
 
 data class ListsResponse(val lists: List<MailChimpList>)
-data class MailChimpList(val id: String, val name:String)
+data class MailChimpList(val id: String, val name: String)
 
 data class MembersResponse(val members: List<Member>)
+data class MemberResponse(val member: Member)
 data class Member(
     val id: String,
     val email_address: String,

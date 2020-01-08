@@ -1,4 +1,4 @@
-package com.example.mailchimpapplication.ui
+package com.example.mailchimpapplication.ui.sublist
 
 interface SubListAdapterType {
     val subType: SubType

@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.ViewModelProviders
 import com.example.mailchimpapplication.data.SubRepository
 import com.example.mailchimpapplication.di.FragmentScope
-import com.example.mailchimpapplication.ui.SubListFragment
+import com.example.mailchimpapplication.ui.sublist.SubListFragment
 import com.example.mailchimpapplication.ui.vm.SubListViewModel
 import com.example.mailchimpapplication.ui.vm.SubListViewModelFactory
 import dagger.Module

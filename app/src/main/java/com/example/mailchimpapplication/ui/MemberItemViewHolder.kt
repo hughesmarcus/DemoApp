@@ -1,6 +1,5 @@
 package com.example.mailchimpapplication.ui
 
-import android.view.TextureView
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +7,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.mailchimpapplication.R
 import com.example.mailchimpapplication.data.models.Member
+import com.example.mailchimpapplication.ui.sublist.SubAdapter
 
 class MemberItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 

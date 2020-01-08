@@ -1,4 +1,4 @@
-package com.example.mailchimpapplication.ui
+package com.example.mailchimpapplication.ui.sublist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mailchimpapplication.R
 import com.example.mailchimpapplication.data.models.Member
+import com.example.mailchimpapplication.ui.MemberItemViewHolder
+import com.example.mailchimpapplication.ui.SubListItemUIModel
+import com.example.mailchimpapplication.ui.TitleItemViewHolder
 
 class SubAdapter(private var subList: List<SubListAdapterType> = listOf()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -22,7 +25,8 @@ class SubAdapter(private var subList: List<SubListAdapterType> = listOf()) :
             SubType.MEMBER -> {
                 view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.fragment_subitem_member, parent, false)
-                val viewHolder = MemberItemViewHolder(view)
+                val viewHolder =
+                    MemberItemViewHolder(view)
                 subListClickhandler?.let { viewHolder.setSubListClickHandler(it) }
                 viewHolder
             }
