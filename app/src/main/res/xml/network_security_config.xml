@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">mailchimpapp.com</domain>
+        <domain includeSubdomains="true">amazonaws.com</domain>
+        <domain includeSubdomains="true">mailchimp.com</domain>
+        <domain includeSubdomains="true">shopify.com</domain>
+        <domain includeSubdomains="true">eepurl.com</domain>
+    </domain-config>
+</network-security-config>
